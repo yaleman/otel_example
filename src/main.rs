@@ -1,11 +1,11 @@
 use opentelemetry_api::KeyValue;
 use otel_example::{
-    get_otlp_endpoint, get_otlp_protocol,
+    get_otlp_endpoint,
     things::{do_other_stuff_loop, do_stuff_loop},
 };
 use std::time::Duration;
 
-use opentelemetry_otlp::WithExportConfig;
+use opentelemetry_otlp::{Protocol, WithExportConfig};
 use opentelemetry_sdk::{
     trace::{self, RandomIdGenerator, Sampler},
     Resource,
@@ -23,7 +23,7 @@ async fn main() -> Result<(), ()> {
                 .tonic()
                 .with_endpoint(&get_otlp_endpoint())
                 .with_timeout(Duration::from_secs(5))
-                .with_protocol(get_otlp_protocol()),
+                .with_protocol(Protocol::HttpBinary),
         )
         .with_trace_config(
             trace::config()
