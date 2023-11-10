@@ -736,7 +736,7 @@ dependencies = [
  "opentelemetry-otlp",
  "opentelemetry-stdout",
  "opentelemetry_api",
- "opentelemetry_sdk 0.20.0",
+ "opentelemetry_sdk 0.21.0",
  "rand",
  "tokio",
  "tonic 0.10.2",
