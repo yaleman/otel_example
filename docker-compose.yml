@@ -23,18 +23,18 @@ services:
         target: /etc/otelcol-contrib/config.yaml
     depends_on:
       - jaeger
-  prometheus:
-    hostname: prometheus
-    container_name: prometheus
-    image: prom/prometheus:v2.47.2
-    restart: always
-    ports:
-     - "9090:9090"
-    volumes:
-      - type: bind
-        source: ./prometheus.yml
-        target: /etc/prometheus/prometheus.yml
-      - prometheus:/prometheus
+  # prometheus:
+  #   hostname: prometheus
+  #   container_name: prometheus
+  #   image: prom/prometheus:v2.47.2
+  #   restart: always
+  #   ports:
+  #    - "9090:9090"
+  #   volumes:
+  #     - type: bind
+  #       source: ./prometheus.yml
+  #       target: /etc/prometheus/prometheus.yml
+  #     - prometheus:/prometheus
   jaeger:
     hostname: jaeger
     container_name: jaeger
