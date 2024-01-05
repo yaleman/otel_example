@@ -20,7 +20,7 @@ opentelemetry-stdout = { version = "0.2.0", features = [
     "trace",
 ] }
 opentelemetry_api = { version = "0.20.0", features = ["logs", "metrics"] }
-opentelemetry_sdk = "0.21.1"
+opentelemetry_sdk = "0.21.2"
 rand = "0.8.5"
 tokio = { version = "1.35.1", features = ["full"] }
 tonic = "0.10.2"
