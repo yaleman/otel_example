@@ -1,4 +1,5 @@
-use opentelemetry_api::KeyValue;
+use opentelemetry::KeyValue;
+use opentelemetry_sdk::runtime::Tokio;
 use otel_example::{
     get_otlp_endpoint,
     things::{do_other_stuff_loop, do_stuff_loop},
@@ -37,7 +38,7 @@ async fn main() -> Result<(), ()> {
                     "example",
                 )])),
         )
-        .install_batch(opentelemetry::runtime::Tokio)
+        .install_batch(Tokio)
         .map_err(|err| eprintln!("Failed to start OTLP pipeline: {:?}", err))?;
 
     // Create a tracing layer with the configured tracer
